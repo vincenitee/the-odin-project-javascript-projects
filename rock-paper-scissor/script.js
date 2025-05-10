@@ -36,6 +36,12 @@ function playRound(humanChoice, computerChoice) {
 function determineWinner(){
     let winnerMessage = (humanScore > computerScore) ? "Human" : "Computer";
     alert(`${winnerMessage} Wins`);
+    resetScore();
+}
+
+function resetScore(){
+    humanScore = 0;
+    computerScore = 0;
 }
 
 function playGame(){
@@ -47,7 +53,6 @@ function playGame(){
 
         playRound(humanSelection, computerSelection);
     } 
-
 }
 
 
