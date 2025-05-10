@@ -33,6 +33,11 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function determineWinner(){
+    let winnerMessage = (humanScore > computerScore) ? "Human" : "Computer";
+    alert(`${winnerMessage} Wins`);
+}
+
 function playGame(){
     // Plays the game for 5 rounds
     for(let i = 0; i < 4; i++){
@@ -43,9 +48,6 @@ function playGame(){
         playRound(humanSelection, computerSelection);
     } 
 
-    
 }
-
-
 
 
