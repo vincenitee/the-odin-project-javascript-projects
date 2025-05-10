@@ -18,7 +18,6 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if(humanChoice === computerChoice){
-        alert("DRAW");
         return;
     }
 
@@ -34,9 +33,8 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function determineWinner(){
-    let winnerMessage = (humanScore > computerScore) ? "Human" : "Computer";
-    alert(`${winnerMessage} Wins`);
-    resetScore();
+    let winner = (humanScore > computerScore) ? "Human" : "Computer";
+    return `${winner} Wins`;
 }
 
 function resetScore(){
@@ -46,13 +44,19 @@ function resetScore(){
 
 function playGame(){
     // Plays the game for 5 rounds
-    for(let i = 0; i < 4; i++){
+    for(let i = 0; i < 5; i++){
         // Get the choices from both players
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
 
         playRound(humanSelection, computerSelection);
     } 
+
+    const winnerMessage = determineWinner();
+    alert(winnerMessage);
+
+    resetScore();
 }
 
+playGame()
 
