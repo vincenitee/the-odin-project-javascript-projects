@@ -20,24 +20,32 @@ function playRound(humanChoice, computerChoice) {
     if(humanChoice === computerChoice){
         alert("DRAW");
         return;
-    }else if (humanChoice === 'rock' && computerChoice === 'paper') {
-        computerScore += 1;
-    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-        humanScore += 1;
-    } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-        computerScore += 1;
-    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-        humanScore += 1;
-    } else if (humanChoice === 'scissor' && computerChoice === 'rock') {
-        computerScore += 1;
-    } else if (humanChoice === 'rock' && computerChoice === 'scissor') {
-        computerScore += 1;
     }
 
-    alert(`Computer Score: ${computerScore}, Human Score: ${humanScore}`)
+    if(
+        humanChoice === 'rock' && computerChoice === 'scissor' ||
+        humanChoice === 'paper' && computerChoice === 'rock' ||
+        humanChoice === 'scissor' && computerChoice === 'paper'
+    ){
+        humanScore += 1;
+    } else{
+        computerScore += 1;
+    }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame(){
+    // Plays the game for 5 rounds
+    for(let i = 0; i < 4; i++){
+        // Get the choices from both players
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+        playRound(humanSelection, computerSelection);
+    } 
+
+    
+}
+
+
+
+
