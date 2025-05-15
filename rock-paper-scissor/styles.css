@@ -13,7 +13,7 @@ body{
 #title-section,
 #player-hands-section,
 #hand-choice-section{
-    margin:.5rem auto;
+    margin:.8rem auto;
     max-width: 50%;
     padding: 0.3rem;
     border: 2px solid #fff;
@@ -21,6 +21,19 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#player-hands-section{
+    border: none;
+}
+
+hr{
+    width: 50%;
+}
+
+#hand-choice-label{
+    color: #fff;
+    text-align: center;
 }
 
 #title-section h1,
@@ -36,13 +49,27 @@ body{
 }
 
 #title-section span,
-#vs-text{
+#vs-text,
+#winner-text{
     font-weight: 600;
     font-size: 1.5rem;
 }
 
+
+#winner-text{
+    display: none;
+    color: #fff;
+}
+
 #title-section > div:nth-child(2){
     display: flex;
+}
+
+
+#middle-text-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .score-wrapper,
@@ -54,6 +81,28 @@ body{
     background: #fff;
     padding: 0.6rem;
     border-radius: 4px;
+}
+
+.hand-wrapper{
+    height: 180px;
+    width: 180px;
+}
+
+.hand-wrapper > img{
+    align-self: center;
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.flipped{
+    transform: scaleX(-1);
+}
+
+.hand-wrapper > .player-name{
+    text-align: center;
+    color: #213555;
+    font-weight: 600;
 }
 
 .score-wrapper > .player-name{

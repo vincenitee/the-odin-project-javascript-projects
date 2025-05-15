@@ -26,7 +26,7 @@
         <!-- Score -->
         <div>
             <div class="score-wrapper">
-                <span class="player-name">Player</span>
+                <span class="player-name">You</span>
                 <span class="player-score-text" id="player-score">01</span>
             </div>
 
@@ -41,17 +41,25 @@
     <div id="player-hands-section">
         <!-- Player Hands -->
         <div class="hand-wrapper">
-            
+            <span class="player-name">You</span>
+            <img src="assets/rock.png" alt="" class="flipped">
         </div>
 
-        <span id="vs-text">VS.</span>
+        <div id="middle-text-wrapper">
+            <span id="winner-text">Computer Wins</span>
+            <span id="vs-text">VS.</span>
+        </div>
 
         <!-- Computer Hands -->
         <div class="hand-wrapper">
-        
+            <span class="player-name">Computer</span>
+            <img src="assets/paper.png" alt="">
         </div>
     </div>
 
+    <hr>
+
+    <h3 id="hand-choice-label">What hand should it be?</h3>
     <!-- Hand Choices -->
     <div id="hand-choice-section">
         <button id="rock-button">
