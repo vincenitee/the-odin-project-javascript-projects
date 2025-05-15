@@ -1,0 +1,67 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+body{
+    background: #3A59D1;
+    min-height: 100vh;
+}
+
+#title-section{
+    margin:0 auto;
+    max-width: 50%;
+    padding: 0.3rem;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#title-section h1,
+#title-section span{
+    color: #fff;
+}
+
+#title-section #title-text-section{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4rem;
+}
+
+#title-section span{
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+
+#title-section > div:nth-child(2){
+    display: flex;
+}
+
+.score-wrapper{
+    margin: 0 0.3rem;
+    min-width: 6ch;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 0.6rem;
+    border-radius: 4px;
+}
+
+.score-wrapper > .player-name{
+    font-size: 0.9rem !important;
+}
+
+.score-wrapper > .player-name, 
+.score-wrapper > .player-score-text{
+    color: #213555 !important;
+}
+
+.score-wrapper > .player-score-text{
+    text-align: right;
+}
+
