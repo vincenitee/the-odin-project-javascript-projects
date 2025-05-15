@@ -42,21 +42,6 @@ function resetScore(){
     computerScore = 0;
 }
 
-function playGame(){
-    // Plays the game for 5 rounds
-    for(let i = 0; i < 5; i++){
-        // Get the choices from both players
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
 
-        playRound(humanSelection, computerSelection);
-    } 
 
-    const winnerMessage = determineWinner();
-    alert(winnerMessage);
-
-    resetScore();
-}
-
-playGame()
 
