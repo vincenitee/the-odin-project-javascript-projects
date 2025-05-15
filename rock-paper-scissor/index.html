@@ -27,12 +27,12 @@
         <div>
             <div class="score-wrapper">
                 <span class="player-name">Player</span>
-                <span class="player-score-text">01</span>
+                <span class="player-score-text" id="player-score">01</span>
             </div>
 
             <div class="score-wrapper">
                 <span class="player-name">Computer</span>
-                <span class="player-score-text">01</span>
+                <span class="player-score-text" id="computer-score">01</span>
             </div>
         </div>
     </div>
@@ -40,8 +40,23 @@
     <!-- Player Hands Section -->
     <div id="player-hands-section">
         <!-- Player Hands -->
+        <div class="hand-wrapper">
             
+        </div>
+
+        <span id="vs-text">VS.</span>
+
         <!-- Computer Hands -->
+        <div class="hand-wrapper">
+        
+        </div>
+    </div>
+
+    <!-- Hand Choices -->
+    <div id="hand-choice-section">
+        <button>Rock</button>
+        <button>Paper</button>
+        <button>Scissor</button>
     </div>
 
     <script src="script.js"></script>

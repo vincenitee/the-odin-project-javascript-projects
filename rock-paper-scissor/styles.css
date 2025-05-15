@@ -10,8 +10,10 @@ body{
     min-height: 100vh;
 }
 
-#title-section{
-    margin:0 auto;
+#title-section,
+#player-hands-section,
+#hand-choice-section{
+    margin:.5rem auto;
     max-width: 50%;
     padding: 0.3rem;
     border: 2px solid #fff;
@@ -22,7 +24,8 @@ body{
 }
 
 #title-section h1,
-#title-section span{
+#title-section span,
+#vs-text{
     color: #fff;
 }
 
@@ -32,17 +35,18 @@ body{
     line-height: 1.4rem;
 }
 
-#title-section span{
+#title-section span,
+#vs-text{
     font-weight: 600;
     font-size: 1.5rem;
 }
-
 
 #title-section > div:nth-child(2){
     display: flex;
 }
 
-.score-wrapper{
+.score-wrapper,
+.hand-wrapper{
     margin: 0 0.3rem;
     min-width: 6ch;
     display: flex;
@@ -65,3 +69,27 @@ body{
     text-align: right;
 }
 
+#hand-choice-section{
+    justify-content: center;
+    gap: 2rem;
+    border: none;
+}
+
+#hand-choice-section > button{
+    background: none;
+    padding: 0.6rem;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    color: #fff;
+}
+
+#hand-choice-section > button:hover{
+    transform: translate(-5%, -5%);
+    transition: all 0.9ms ease-in;
+    box-shadow: 2px 2px 1px;
+}
+
+#hand-choice-section > button:active{
+    background: #fff;
+    color: #213555;
+}
