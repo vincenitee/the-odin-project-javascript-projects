@@ -8,6 +8,8 @@ const computerScoreLabel = document.querySelector('#computer-score');
 
 const winnerLabel = document.querySelector('#winner-text');
 
+const playAgainButton = document.querySelector('#play-again-button');
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -57,6 +59,16 @@ function determineWinner(){
     winnerLabel.textContent = `${winner} Wins!`;
 }
 
+function disablePlayerSelectionButtons(){
+    playerSelectionButtons.forEach((button) => {
+        button.disabled = true;
+    });
+}
+
+function togglePlayAgainButtonVisibility(){
+    playAgainButton.classList.toggle("d-none");
+}
+
 playerSelectionButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
         const playerSelection = e.currentTarget.dataset.playerSelection;
@@ -67,6 +79,8 @@ playerSelectionButtons.forEach((button) => {
 
         if(humanScore === 5 || computerScore === 5){
             determineWinner();
+            disablePlayerSelectionButtons();
+            togglePlayAgainButtonVisibility();
         }
     })
 })
