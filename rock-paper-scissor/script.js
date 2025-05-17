@@ -6,6 +6,8 @@ const computerHand = document.querySelector('#computer-hand');
 const playerScoreLabel = document.querySelector('#player-score');
 const computerScoreLabel = document.querySelector('#computer-score');
 
+const winnerLabel = document.querySelector('#winner-text');
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -50,8 +52,9 @@ function updateSelectedHands(playerSelection, computerSelection){
 }
 
 function determineWinner(){
-    let winner = (humanScore > computerScore) ? "Human" : "Computer";
-    return `${winner} Wins`;
+    const winner = (humanScore > computerScore) ? "Human" : "Computer";
+    winnerLabel.style.display = "block";
+    winnerLabel.textContent = `${winner} Wins!`;
 }
 
 function resetScore(){
@@ -66,6 +69,10 @@ playerSelectionButtons.forEach((button) => {
 
         updateSelectedHands(playerSelection, computerSelection);
         playRound(playerSelection, computerSelection);
+
+        if(humanScore === 5 || computerScore === 5){
+            determineWinner();
+        }
     })
 })
 
