@@ -1,3 +1,11 @@
+const playerSelectionButtons = document.querySelectorAll('[data-player-selection]');
+
+const playerHand = document.querySelector('#player-hand');
+const computerHand = document.querySelector('#computer-hand');
+
+const playerScoreLabel = document.querySelector('#player-score');
+const computerScoreLabel = document.querySelector('#computer-score');
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -18,7 +26,7 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if(humanChoice === computerChoice){
-        return;
+        return ;
     }
 
     if(
@@ -27,9 +35,18 @@ function playRound(humanChoice, computerChoice) {
         humanChoice === 'scissor' && computerChoice === 'paper'
     ){
         humanScore += 1;
+        playerScoreLabel.textContent = humanScore;
     } else{
         computerScore += 1;
+        computerScoreLabel.textContent = computerScore;
     }
+
+}
+
+function updateSelectedHands(playerSelection, computerSelection){
+    const dir = 'assets';
+    computerHand.src = `${dir}/${computerSelection}.png`;
+    playerHand.src = `${dir}/${playerSelection}.png`;
 }
 
 function determineWinner(){
@@ -42,6 +59,15 @@ function resetScore(){
     computerScore = 0;
 }
 
+playerSelectionButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        const playerSelection = e.currentTarget.dataset.playerSelection;
+        const computerSelection = getComputerChoice();
+
+        updateSelectedHands(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+    })
+})
 
 
 
