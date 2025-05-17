@@ -57,11 +57,6 @@ function determineWinner(){
     winnerLabel.textContent = `${winner} Wins!`;
 }
 
-function resetScore(){
-    humanScore = 0;
-    computerScore = 0;
-}
-
 playerSelectionButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
         const playerSelection = e.currentTarget.dataset.playerSelection;
