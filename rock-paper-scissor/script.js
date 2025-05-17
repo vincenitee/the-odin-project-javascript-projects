@@ -54,7 +54,7 @@ function updateSelectedHands(playerSelection, computerSelection){
 }
 
 function determineWinner(){
-    const winner = (humanScore > computerScore) ? "Human" : "Computer";
+    const winner = (humanScore > computerScore) ? "Player" : "Computer";
     winnerLabel.style.display = "block";
     winnerLabel.textContent = `${winner} Wins!`;
 }
@@ -70,14 +70,26 @@ function togglePlayAgainButtonVisibility(){
 }
 
 function newRound(){
-    humanScore = 0;
-    computerScore = 0;
-
-    playerHand.style.src = `${dir}/human.png`;
-    computerHand.style.src = `${dir}/robot.png`;
+    resetScore();
+    resetDisplayedHand();
 
     togglePlayAgainButtonVisibility();
     togglePlayerSelectionButtons();
+
+    winnerLabel.style.display = "none";
+}
+
+function resetDisplayedHand(){
+    playerHand.src = `${dir}/human.png`;
+    computerHand.src = `${dir}/robot.png`;
+}
+
+function resetScore() {
+    humanScore = 0;
+    computerScore = 0;
+
+    playerScoreLabel.textContent = 0;
+    computerScoreLabel.textContent = 0;
 }
 
 playerSelectionButtons.forEach((button) => {
@@ -97,7 +109,11 @@ playerSelectionButtons.forEach((button) => {
             togglePlayAgainButtonVisibility();
         }
     })
-})
+});
+
+playAgainButton.addEventListener('click', () => {
+    newRound();
+});
 
 
 
