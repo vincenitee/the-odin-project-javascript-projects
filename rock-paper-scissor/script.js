@@ -59,9 +59,9 @@ function determineWinner(){
     winnerLabel.textContent = `${winner} Wins!`;
 }
 
-function disablePlayerSelectionButtons(){
+function togglePlayerSelectionButtons(){
     playerSelectionButtons.forEach((button) => {
-        button.disabled = true;
+        button.disabled = !button.disabled;
     });
 }
 
@@ -77,7 +77,7 @@ function newRound(){
     computerHand.style.src = `${dir}/robot.png`;
 
     togglePlayAgainButtonVisibility();
-    
+    togglePlayerSelectionButtons();
 }
 
 playerSelectionButtons.forEach((button) => {
@@ -93,7 +93,7 @@ playerSelectionButtons.forEach((button) => {
 
         if(humanScore === 5 || computerScore === 5){
             determineWinner();
-            disablePlayerSelectionButtons();
+            togglePlayerSelectionButtons();
             togglePlayAgainButtonVisibility();
         }
     })
