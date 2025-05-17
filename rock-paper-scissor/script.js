@@ -1,3 +1,5 @@
+const dir = 'assets';
+
 const playerSelectionButtons = document.querySelectorAll('[data-player-selection]');
 
 const playerHand = document.querySelector('#player-hand');
@@ -44,11 +46,9 @@ function playRound(humanChoice, computerChoice) {
         computerScore += 1;
         computerScoreLabel.textContent = computerScore;
     }
-
 }
 
 function updateSelectedHands(playerSelection, computerSelection){
-    const dir = 'assets';
     computerHand.src = `${dir}/${computerSelection}.png`;
     playerHand.src = `${dir}/${playerSelection}.png`;
 }
@@ -69,13 +69,27 @@ function togglePlayAgainButtonVisibility(){
     playAgainButton.classList.toggle("d-none");
 }
 
+function newRound(){
+    humanScore = 0;
+    computerScore = 0;
+
+    playerHand.style.src = `${dir}/human.png`;
+    computerHand.style.src = `${dir}/robot.png`;
+
+    togglePlayAgainButtonVisibility();
+    
+}
+
 playerSelectionButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
+
         const playerSelection = e.currentTarget.dataset.playerSelection;
         const computerSelection = getComputerChoice();
 
         updateSelectedHands(playerSelection, computerSelection);
         playRound(playerSelection, computerSelection);
+
+        console.log(`Player: ${humanScore} | Computer: ${computerScore}`)
 
         if(humanScore === 5 || computerScore === 5){
             determineWinner();
