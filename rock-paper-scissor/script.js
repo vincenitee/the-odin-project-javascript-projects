@@ -25,20 +25,15 @@ function getComputerChoice() {
     return choices[choiceIndex];
 }
 
-function getHumanChoice() {
-    let humanChoice = prompt('Rock, Paper or Scissor? ');
-    return humanChoice;
-}
-
 function playRound(humanChoice, computerChoice) {
     if(humanChoice === computerChoice){
         return ;
     }
 
     if(
-        humanChoice === 'rock' && computerChoice === 'scissor' ||
+        humanChoice === 'rock' && computerChoice === 'scissors' ||
         humanChoice === 'paper' && computerChoice === 'rock' ||
-        humanChoice === 'scissor' && computerChoice === 'paper'
+        humanChoice === 'scissors' && computerChoice === 'paper'
     ){
         humanScore += 1;
         playerScoreLabel.textContent = humanScore;
